@@ -50,10 +50,6 @@ public class APIGatewayConfiguration extends Configuration {
 		return productCatalogDiscoveryClient;
 	}
 
-	/**
-	 * @param productCatalogClient
-	 *            the productCatalogClient to set
-	 */
 	public void setProductCatalogDiscoveryClient(DiscoveryClient productCatalogDiscoveryClient) {
 		this.productCatalogDiscoveryClient = productCatalogDiscoveryClient;
 	}
