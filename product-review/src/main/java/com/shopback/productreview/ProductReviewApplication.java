@@ -53,6 +53,9 @@ public class ProductReviewApplication extends Application<ProductReviewConfigura
 				.enableAutoConfig(getClass().getPackage().getName()).setConfigClass(ProductReviewConfiguration.class)
 				.build(Stage.PRODUCTION);
 		bootstrap.addBundle(guiceBundle);
+		// Uncomment below to read the yaml file from Jar
+		// bootstrap.setConfigurationSourceProvider(new
+		// ResourceConfigurationSourceProvider());
 	}
 
 	@Override

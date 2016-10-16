@@ -57,6 +57,9 @@ public class ProductCatalogApplication extends Application<ProductCatalogConfigu
 				.enableAutoConfig(getClass().getPackage().getName()).setConfigClass(ProductCatalogConfiguration.class)
 				.build(Stage.PRODUCTION);
 		bootstrap.addBundle(guiceBundle);
+		// Uncomment below to read the yaml file from Jar
+		// bootstrap.setConfigurationSourceProvider(new
+		// ResourceConfigurationSourceProvider());
 	}
 
 	/*

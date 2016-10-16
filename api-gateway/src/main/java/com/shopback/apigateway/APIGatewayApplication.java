@@ -49,6 +49,9 @@ public class APIGatewayApplication extends Application<APIGatewayConfiguration> 
 				.enableAutoConfig(getClass().getPackage().getName()).setConfigClass(APIGatewayConfiguration.class)
 				.build(Stage.PRODUCTION);
 		bootstrap.addBundle(guiceBundle);
+		// Uncomment below to read the yaml file from Jar
+		// bootstrap.setConfigurationSourceProvider(new
+		// ResourceConfigurationSourceProvider());
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
