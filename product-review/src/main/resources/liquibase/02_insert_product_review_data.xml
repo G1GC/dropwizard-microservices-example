@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+	<changeSet id="1" author="Karthik">
+		<comment>Insert into product_review table</comment>
+		<sql>
+			INSERT INTO product_review (sku_id,rating,reviewed_by,reviewed_on,review_comment) VALUES ('SKU-000',4.5,'Anonymous',CURRENT_TIMESTAMP,'Best phone in the world!');
+			INSERT INTO product_review (sku_id,rating,reviewed_by,reviewed_on,review_comment) VALUES ('SKU-000',4.9,'Karthik',CURRENT_TIMESTAMP,'Best phone of all time..');
+			INSERT INTO product_review (sku_id,rating,reviewed_by,reviewed_on,review_comment) VALUES ('SKU-000',5.0,'Rahul',CURRENT_TIMESTAMP,'');
+			INSERT INTO product_review (sku_id,rating,reviewed_by,reviewed_on,review_comment) VALUES ('SKU-000',4.5,'Jay',CURRENT_TIMESTAMP,'Go for it without a second thought!');
+			INSERT INTO product_review (sku_id,rating,reviewed_by,reviewed_on,review_comment) VALUES ('SKU-001',4.9,'Karthik',CURRENT_TIMESTAMP,'Apple continues to amaze me!!');
+			INSERT INTO product_review (sku_id,rating,reviewed_by,reviewed_on,review_comment) VALUES ('SKU-001',5.0,'Naveen',CURRENT_TIMESTAMP,'Can't describe the feeling, buy it and feel yourself!');
+			INSERT INTO product_review (sku_id,rating,reviewed_by,reviewed_on,review_comment) VALUES ('SKU-002',4.5,'Anonymous',CURRENT_TIMESTAMP,'Coolest phone built ever!');
+			INSERT INTO product_review (sku_id,rating,reviewed_by,reviewed_on,review_comment) VALUES ('SKU-002',4.9,'Anonymous',CURRENT_TIMESTAMP,'Best phone in the world!');
+			INSERT INTO product_review (sku_id,rating,reviewed_by,reviewed_on,review_comment) VALUES ('SKU-002',5.0,'Manoj',CURRENT_TIMESTAMP,'Best!Bestest!Bestsssst!');
+		</sql>
+		<rollback>
+			<sql>DELETE FROM product_review</sql>
+		</rollback>
+	</changeSet>
+</databaseChangeLog>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+	<changeSet id="1" author="Karthik">
+		<comment>Drop existing tables</comment>
+		<sql>
+			DROP TABLE IF EXISTS product_catalog;
+		</sql>
+	</changeSet>
+
+	<changeSet id="2" author="Karthik">
+		<comment>Create product_catalog Table</comment>
+		<createTable tableName="product_catalog">
+			<column name="id" type="VARCHAR(10)">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="name" type="VARCHAR(50)" />
+			<column name="desc" type="VARCHAR(250)" />
+			<column name="width" type="INTEGER" />
+			<column name="height" type="INTEGER" />
+			<column name="depth" type="INTEGER" />
+			<column name="dimension_unit" type="VARCHAR(20)" />
+			<column name="weight" type="FLOAT" />
+			<column name="categories" type="VARCHAR(200)" />
+			<column name="price_unit" type="VARCHAR(20)" />
+			<column name="list_price" type="INTEGER" />
+			<column name="sale_price" type="INTEGER" />
+		</createTable>
+		<rollback>
+			<dropTable tableName="product_catalog" />
+		</rollback>
+	</changeSet>
+</databaseChangeLog>

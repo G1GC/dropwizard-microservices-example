@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+	<changeSet id="1" author="Karthik">
+		<comment>Insert into product_catalog table</comment>
+		<sql>
+			INSERT INTO product_catalog (id,desc,name,width,height,depth,dimension_unit,weight,categories,price_unit,list_price,sale_price) VALUES ('SKU-000','Apple iPhone 6S - Space Grey, 16GB','iPhone 6S(Space Grey, 16GB)',67,138,7,'mm',143,'phone,smartphone,iPhone','dollars',700,720);
+			INSERT INTO product_catalog (id,desc,name,width,height,depth,dimension_unit,weight,categories,price_unit,list_price,sale_price) VALUES ('SKU-001','Apple iPhone 6S - Golden Color, 16GB','iPhone 6S(Gold, 16GB)',67,138,7,'mm',143,'phone,smartphone,iPhone','dollars',680,700);
+			INSERT INTO product_catalog (id,desc,name,width,height,depth,dimension_unit,weight,categories,price_unit,list_price,sale_price) VALUES ('SKU-002','Apple iPhone 6 - Space Grey, 32GB','iPhone 6(Space Grey, 32GB)',67,138,7,'mm',143,'phone,smartphone,iPhone','dollars',680,700);
+		</sql>
+		<rollback>
+			<sql>DELETE FROM product_catalog</sql>
+		</rollback>
+	</changeSet>
+</databaseChangeLog>

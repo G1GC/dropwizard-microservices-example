@@ -1,0 +1,27 @@
+server:
+  rootPath: /api/*
+  applicationContextPath: /
+  adminContextPath: /admin
+  applicationConnectors:
+    - type: http
+      port: 8080
+  adminConnectors:
+    - type: http
+      port: 8081
+  
+logging:
+  level: INFO
+  appenders:
+    - type: console
+    
+# Discovery-related settings.
+discovery:
+    serviceName: api-gateway
+    
+jerseyClient:
+  minThreads: 1
+  maxThreads: 128
+  workQueueSize: 8
+  gzipEnabled: true
+  gzipEnabledForRequests: true
+  chunkedEncodingEnabled: true
